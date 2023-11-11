@@ -7,45 +7,36 @@ body {
     padding: 0;
 }
 
-/* Typewriter Text Effect */
-.typewriter-text {
-    overflow: hidden; /* Hide overflowing text */
-    border-right: .10em solid orange; /* Add a blinking cursor effect */
-    font-size: 32px;
-    white-space: nowrap; /* Prevent text from wrapping */
-    margin: 0 auto; /* Center the text */
-    margin-top: 200px;
-    letter-spacing: .10em; /* Adjust letter spacing for a vintage look */
-    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite; /* Typing animation */
-    font-family: 'Rubik', sans-serif; /* Use the appropriate font-family */
+
+
+/* Welcome Section styles */
+.welcome-section {
+    text-align: center;
+    padding: 250px 40px 200px; /* Added 50px bottom padding for space */
+    background-color: #111111; /* Dark background color for consistency */
+    color: #fff; /* White text color */
 }
 
-/* Typing Animation Keyframes */
-@keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
+.welcome-section h1 {
+    font-size: 48px;
+    color: #e76d02; /* Orange color for emphasis */
+    margin-bottom: 20px;
+    font-style:normal;
+    font-weight:bold;
+    font-family: 'Oswald', sans-serif;
 }
 
-/* Blinking Cursor Animation Keyframes */
-@keyframes blink-caret {
-    from,
-    to {
-        border-color: transparent;
-    }
-    50% {
-        border-color: orange;
-    }
+.welcome-section p {
+    font-size: 22px;
+    font-family: 'Rubik', sans-serif;
+    color: #ffffff; /* Lighter text color for better readability */
 }
 
 /* Highlighted words styling */
 .highlight {
-    color: #e76d02; /* Use the desired highlight color */
     font-weight: bold; /* Make the text bold for emphasis */
-    font-size: 40px;
+    font-size: 28px;
+    font-style:italic;
 }
 
 /* Header CSS */
@@ -53,7 +44,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 0;
+    padding: 0px 20px;
     height: 60px; /* Adjusted the height of the header */
     width: 100%;
     position: fixed;
@@ -246,32 +237,6 @@ li:hover::after {
     font-size: 2rem;
 }
 
-/* Welcome Section */
-#welcome {
-    height: 50vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px; /* Adjust the top margin to push it down */
-    padding: 50px 0; /* Add padding for more centered content and spacing */
-}
-
-/* Style for the Welcome section content */
-.welcome-content {
-    text-align: center;
-    color: #fff;
-}
-
-.welcome-content h1 {
-    font-size: 72px;
-    margin-bottom: 20px;
-}
-
-.welcome-text {
-    font-size: 36px;
-    margin-top: 20px; /* Adjust the top margin for spacing between welcome text and icons */
-}
 
 /* Updated CSS for the Contact Section */
 #contact {
@@ -446,7 +411,7 @@ li:hover::after {
     color: #fff; /* White text color */
     text-decoration: none;
     font-weight: bold; /* Make the text bold */
-    padding: 15px 20px; /* Adjusted padding for spacing */
+    padding: 20px 20px; /* Adjusted padding for spacing */
     border-radius: 10px; /* Rounded corners */
     border: #121212;
     border-style: inherit;
