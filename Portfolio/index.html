@@ -24,16 +24,9 @@
         </nav>
     </div>
 
-    <!-- Welcome Section -->
-    <div id="welcome" class="section" style="position: relative; background-image: url('your-background-image.jpg'); background-size: cover;">
-        <div class="welcome-content">
-            <h1 id="welcome-heading" class="welcome-heading">
-                <div class="typewriter-text">
-                    My name is <span class="highlight">Samson Oloruntola.</span> Learn about me, my <span class="highlight">projects</span> and <span class="highlight">skills.</span>
-                </div>
-            </h1>
-        </div>
-
+    <div class="welcome-section">
+        <h1 id="welcome-title" class="highlight">Welcome to my Portfolio!</h1>
+        <p id="welcome-description" class="welcome-text"></p>
     </div>
 
 
@@ -143,7 +136,7 @@
         <div class="freelance-project">
             <img src="../images/becrushed.png" alt="Project 1 Image" width="150" height="100">
             <h4><i>Be Crushed by a Speeding Wall</i></h4>
-            <p><b>Role: 3D Modeler & Environmental Artist</b></p>
+            <p><b>Role: Environmental Artist</b></p>
             <p>May 2022 - Sep 2022</p>
             <a href="https://www.roblox.com/games/482742811/Be-Crushed-by-a-Speeding-Wall" target="_blank">Link</a>
         </div>
@@ -154,7 +147,6 @@
             <h4><i>Animations: Mocap</i></h4>
             <p><b>Role: Environmental Artist</b>
             <p>Aug 2019 - Sep 2019</p>
-            <br>
             <a href="https://www.roblox.com/games/3093229294/Animations-Mocap" target="_blank">Link</a>
         </div>
 
@@ -164,7 +156,6 @@
             <h4><i>Dominus Lifting Simulator</i></h4>
             <p><b>Role: 3D Modeler & Environmental Arist</b>
             <p>Aug 2020 - Feb 2021</p>
-            <br>
             <a href="https://www.roblox.com/games/1254185591/Dominus-Lifting-Simulator" target="_blank">Link</a>
         </div>
 
@@ -174,7 +165,6 @@
             <h4><i>Ghost Simulator</i></h4>
             <p><b>Role: 3D Modeler</b></p>
             <p>May 2022 - Sep 2022</p>
-            <br>
             <a href="https://www.roblox.com/games/2685347741/HALLOWEEN-PART-1-Ghost-Simulator" target="_blank">Link</a>
         </div>
 
@@ -182,7 +172,7 @@
         <div class="freelance-project">
             <img src="../images/eternal.png" alt="Project 5 Image" width="150" height="100">
             <h4><i>Eternal Rarities</i></h4>
-            <p><b>Role: 3D Modeler & Environmental Artist</b></p>
+            <p><b>Role: Environmental Artist</b></p>
             <p>Duration: July 2023 - Sep 2023</p>
             <a href="https://www.roblox.com/games/14190026990/HUGE-UPDATE-Eternal-Rarities-2" target="_blank">Link</a>
         </div>
@@ -193,7 +183,6 @@
             <h4><i>Building Architect</i></h4>
             <p><b>Role: 3D Modeler</b>
             <p>Duration: Nov 2020 - Jan 2021</p>
-            <br>
             <a href="https://www.roblox.com/games/5857383913/Building-Architect" target="_blank">Link</a>
         </div>
 
@@ -202,7 +191,6 @@
             <h4><i>Infinite Autocorrect</i></h4>
             <p><b>Role: Environmental Arist</b></p>
             <p>Duration: Apr 2020 - Apr 2020</p>
-            <br>
             <a href="https://www.roblox.com/games/3403470694/Infinite-Autocorrect" target="_blank">Link</a>
         </div>
 
@@ -211,7 +199,6 @@
             <h4><i>Gladiator Minigames</i></h4>
             <p><b>Role: Environmental Artist</b>
             <p>Duration: Nov 2019 - Nov 2020</p>
-            <br>
             <a href="https://www.roblox.com/games/4742715570/Gladiator-Minigames-Sword-Fighting" target="_blank">Link</a>
         </div>
         
@@ -233,6 +220,37 @@
         </a>
     </div>
 </footer>
+
+<!-- Wrap the typewriter effect in a single script tag -->
+<script>
+    // Typewriter function
+    function typeWriterEffect(text, speed, elementId, callback) {
+        let i = 0;
+        const element = document.getElementById(elementId);
+        element.innerHTML = ''; // Clear existing content
+
+        function type() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, speed);
+            } else {
+                // Call the callback function after the typing is complete
+                if (typeof callback === 'function') {
+                    callback();
+                }
+            }
+        }
+
+        type();
+    }
+
+    // Call the function for the welcome title
+    typeWriterEffect("Welcome to My Portfolio", 50, "welcome-title", function () {
+        // Call the function for the welcome description after the title is typed out
+        typeWriterEffect("I'm Samson Oloruntola, a Computer Science student passionate about programming, machine learning and game development. Explore my projects and skills below.", 50, "welcome-description");
+    });
+</script>
 
 </body>
 </html>
