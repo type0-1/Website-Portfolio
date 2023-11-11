@@ -1,0 +1,578 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    background-color: #111111;
+    margin: 0;
+    padding: 0;
+}
+
+/* Typewriter Text Effect */
+.typewriter-text {
+    overflow: hidden; /* Hide overflowing text */
+    border-right: .10em solid orange; /* Add a blinking cursor effect */
+    font-size: 32px;
+    white-space: nowrap; /* Prevent text from wrapping */
+    margin: 0 auto; /* Center the text */
+    margin-top: 200px;
+    letter-spacing: .10em; /* Adjust letter spacing for a vintage look */
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite; /* Typing animation */
+    font-family: 'Rubik', sans-serif; /* Use the appropriate font-family */
+}
+
+/* Typing Animation Keyframes */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Blinking Cursor Animation Keyframes */
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: orange;
+    }
+}
+
+/* Highlighted words styling */
+.highlight {
+    color: #e76d02; /* Use the desired highlight color */
+    font-weight: bold; /* Make the text bold for emphasis */
+    font-size: 40px;
+}
+
+/* Header CSS */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 0;
+    height: 60px; /* Adjusted the height of the header */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.8); /* Use a slightly transparent background for a modern look */
+    backdrop-filter: blur(5px); /* Apply a background blur for a frosted glass effect */
+    transition: background-color 0.3s; /* Add a transition for background color change */
+}
+
+.logo {
+    font-family: 'Rubik', sans-serif;
+    color: #fff;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+nav {
+    text-align: center;
+}
+
+ul {
+    font-family: 'Rubik', sans-serif;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin-right: 40px;
+    position: relative;
+    transition: transform 0.2s;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    transition: color 0.2s;
+    position: relative;
+}
+
+/* Add the hover effect */
+li:hover {
+    transform: scale(1.05); /* Slightly scale up the item on hover */
+}
+
+li:hover a {
+    color: #e76d02; /* Change text color on hover */
+}
+
+/* Create a bar under the text on hover */
+li::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 3px;
+    background-color: #e76d02; /* Highlight with an orange bar on hover */
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+}
+
+li:hover::after {
+    transform: scaleX(1); /* Expand the bar on hover */
+}
+
+.section {
+    height: 100vh;
+    background-color: #111111;
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+.section h1 {
+    font-family: "Roboto", sans-serif;
+    font-size: 109px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.section h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 72px;
+    font-weight: bold;
+    color: #f6f6f6;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+#title1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 42px;
+    font-style: italic;
+    color: #f6f6f6;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.section p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px; /* Reduced the font size to 18px to make the text smaller */
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.section + .section {
+    margin-top: 20px;
+}
+
+/* CSS for the resizing text */
+.resize-text {
+    font-size: 1rem;
+    transition: font-size 0.5s;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.section.active .resize-text {
+    font-size: 2rem;
+}
+
+/* CSS for the About Section */
+#about {
+    background-color: #111111;
+    padding: 50px; /* Increase padding for more space */
+    text-align: center;
+}
+
+#about h2 {
+    color: #ffffff; /* Highlight the section title with an orange color */
+    font-size: 72px; /* Increase the font size for the section title */
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.about-subsection {
+    background-color: #222222; /* Add a slightly darker background to subsections */
+    border-radius: 10px; /* Rounded corners for a card-like look */
+    padding: 20px;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+    transition: background-color 0.2s, transform 0.2s; /* Add transitions for background color and scale */
+    border: 2px solid #000000; /* Border style for the subsections */
+}
+
+.about-subsection h3 {
+    color: #e76d02; /* Highlight subsection titles with an orange color */
+    font-size: 24px; /* Increase the font size for subsection titles */
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.about-subsection p {
+    font-size: 16px; /* Adjust the font size for subsection text */
+    color: #ccc; /* Use a lighter text color for subsection text */
+}
+
+/* Hover effect for the subsections */
+.about-subsection:hover {
+    background-color: #3a3a3a; /* Change background color on hover */
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+
+/* CSS for the resizing text in About Section */
+.about-subsection .resize-text {
+    font-size: 1rem;
+    transition: font-size 0.5s;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.section.active .about-subsection .resize-text {
+    font-size: 2rem;
+}
+
+/* Welcome Section */
+#welcome {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px; /* Adjust the top margin to push it down */
+    padding: 50px 0; /* Add padding for more centered content and spacing */
+}
+
+/* Style for the Welcome section content */
+.welcome-content {
+    text-align: center;
+    color: #fff;
+}
+
+.welcome-content h1 {
+    font-size: 72px;
+    margin-bottom: 20px;
+}
+
+.welcome-text {
+    font-size: 36px;
+    margin-top: 20px; /* Adjust the top margin for spacing between welcome text and icons */
+}
+
+/* Updated CSS for the Contact Section */
+#contact {
+    background-color: #111111;
+    padding: 10px 0; /* Adjusted padding for more space */
+    text-align: center;
+}
+
+.contact-icons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow icons to wrap to the next line on smaller screens */
+}
+
+.contact-icon {
+    text-decoration: none;
+    margin: 20px; /* Adjust margin for spacing between icons */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.8; /* Initial opacity for a subtle effect */
+    transform: translateY(0); /* Initial position for a subtle effect */
+    transition: opacity 0.3s, transform 0.3s, color 0.3s; /* Add transitions for a smoother effect */
+}
+
+.contact-icon:hover {
+    opacity: 1; /* Full opacity on hover */
+    transform: translateY(-10px); /* Move up slightly on hover */
+    color: #e76d02; /* Change color on hover */
+}
+
+.contact-icons-container img {
+    width: 50px; /* Adjust the size of the icons */
+    height: 50px;
+    margin-top: -15px;
+}
+
+/* Center the project grid */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 2fr)); /* Adjusted grid layout */
+    gap: 25px;
+    justify-content: center; /* Center the grid horizontally */
+    align-content: center; /* Center the grid vertically */
+    align-items: center; /* Center the content of each grid item vertically */
+    margin-top: 50px; /* Adjusted top margin */
+}
+
+/* Style for each GitHub project item to make them more attractive */
+.github-project {
+    background-color: #222222; /* Darker background color */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+    height: 350px; /* Adjusted height */
+    width: 300px; /* Adjusted width */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: background-color 0.2s, transform 0.2s; /* Add transition for background color and scale */
+    border: 2px solid #000000; /* Border style for the project boxes */
+}
+
+/* Apply the hover effect for the project boxes */
+.github-project:hover {
+    background-color: #3a3a3a; /* Slightly lighter background on hover */
+    transform: translateY(-5px); /* Slightly elevate the box on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Add a more pronounced box shadow on hover */
+}
+
+/* Style for project links that look like buttons */
+.github-project a {
+    display: inline-block; /* Make the links block-level elements */
+    background-color: #e76d02; /* Orange background color */
+    color: #fff; /* White text color */
+    text-decoration: none;
+    font-weight: bold; /* Make the text bold */
+    padding: 10px 20px; /* Add padding for spacing */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.2s; /* Add a hover effect for background color */
+}
+
+/* Apply the hover effect for project links */
+.github-project a:hover {
+    background-color: #f14800; /* Slightly darker orange on hover */
+    text-decoration: none;
+    color: #080808;
+}
+
+/* Increase the font size for project titles */
+.github-project h3 {
+    font-size: 20px;
+    margin-top: 10px;
+    color: #fff;
+}
+
+/* Style for skills used section */
+.github-project p {
+    color: #ccc; /* Lighter text for skills used */
+    font-size: 16px;
+    margin-top: 10px;
+    color: #fff;
+}
+
+/* Hover effect for the project boxes */
+.github-project:hover {
+    transform: translateY(-5px); /* Slightly elevate the box on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Add a more pronounced box shadow on hover */
+}
+
+
+/* Updated CSS for the freelance projects section */
+#freelance-projects {
+    background-color: #111111;
+    padding: 15px; /* Increased padding for more space */
+    margin-top: 200px;
+    margin-bottom: 200px;
+    text-align: center;
+}
+
+#title3 {
+    color: #f6f6f6;
+    font-size: 72px;
+    margin-bottom: 30px; /* Added margin for separation */
+}
+
+/* Style for the freelance projects grid */
+.freelance-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjusted grid layout */
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CSS for the freelance projects section hover effect */
+.freelance-project {
+    font-weight: bold;
+    text-align: center;
+    background-color: #222222;
+    border-radius: 10px;
+    padding: 30px;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s, transform 0.2s;
+    border: 2px solid #000000;
+    position: relative;
+    height: 150px; /* Adjusted height */
+}
+
+/* Apply the hover effect for the freelance project boxes */
+.freelance-project:hover {
+    background-color: #3a3a3a; /* Change background color on hover */
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+/* Style for freelance project titles */
+.freelance-project h4 {
+    font-size: 20px; /* Increase the font size for project titles */
+    font-weight: bold; /* Make the text bold */
+    margin: 5px 0; /* Adjusted margin for spacing */
+    color: #e76d02;
+}
+
+/* Style for freelance project links that look like buttons */
+.freelance-project a {
+    display: inline-block; /* Make the links block-level elements */
+    background-color: #e76d02; /* Orange background color */
+    color: #fff; /* White text color */
+    text-decoration: none;
+    font-weight: bold; /* Make the text bold */
+    padding: 15px 20px; /* Adjusted padding for spacing */
+    border-radius: 10px; /* Rounded corners */
+    border: #121212;
+    border-style: inherit;
+    transition: background-color 0.2s; /* Add a hover effect for background color */
+}
+
+/* Apply the hover effect for freelance project links */
+.freelance-project a:hover {
+    background-color: #f14800; /* Slightly darker orange on hover */
+    text-decoration: none;
+    color: #080808;
+}
+
+/* Style for skills used section in the freelance projects */
+.freelance-project p {
+    color: #ccc; /* Lighter text for skills used */
+    font-size: 16px;
+    margin-top: 20px; /* Adjusted margin for spacing */
+    color: #fff;
+    transition: opacity 0.3s; /* Add transition for opacity */
+}
+
+/* On hover, make the text disappear */
+.freelance-project:hover p, .freelance-project:hover h3 {
+    opacity: 0; /* Make the text disappear on hover */
+}
+
+.freelance-project:hover h4 {
+    opacity: 0;
+}
+
+
+/* Style for freelance project images */
+.freelance-project img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Rounded corners for the images */
+    position: absolute; /* Position absolute for proper overlay */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    border-radius: 10px; /* Rounded corners for the images */
+    z-index: -1; /* Send the image to the back */
+    opacity:0;
+    transition: opacity 0.7s; /* Add transition for opacity */
+}
+
+/* On hover, make the image more visible */
+.freelance-project:hover img {
+    opacity: 1; /* Make the image slightly visible on hover */
+}
+
+
+/* Updated CSS for the skills section */
+#skills {
+    background-color: #111111;
+    padding: 20px;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+#title2 {
+    color: #f6f6f6;
+    font-size: 72px; /* Increase the font size for the title */
+}
+
+/* Style for the skills grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CSS for the skills section hover effect */
+.skill {
+    text-align: center;
+    background-color: #222222; /* Default background color */
+    border-radius: 10px; /* Rounded corners for a card-like look */
+    padding: 20px;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+    transition: background-color 0.2s, transform 0.2s; /* Add transition for background color and scale */
+    border: 2px solid #000000; /* Border style for the project boxes */
+}
+
+.skill:hover {
+    background-color: #3a3a3a; /* Change background color on hover */
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+/* Style for skill icons */
+.skill img {
+    width: 100px;
+    height: 100px;
+    margin: 20px 0; /* Adjust margin for spacing */
+}
+
+/* Style for skill titles */
+.skill h3 {
+    font-size: 24px; /* Increase the font size for skill titles */
+    font-weight: bold; /* Make the text bold */
+    margin: 10px 0;
+}
+
+
+/* Style for the copyright notice */
+footer {
+    background-color: #0b0b0b; /* Darker background color for contrast */
+    color: #ccc;
+    text-align: center;
+    height: 75px;
+    padding: 10px 0px; /* Increased padding for better spacing */
+    font-size: 16px;
+    position: fixed;
+    bottom: 0; /* Fixed at the bottom of the viewport */
+    width: 100%; /* Full width */
+    box-shadow: 0px -2px 10px rgba(251, 138, 0, 0.2)/* Add a subtle box shadow at the top for separation */
+}
+
+.copyright {
+    font-weight: bold;
+    color: #e76d02; /* Orange color for emphasis */
+}
+
+#orange-link {
+    color: orange;
+}
+
